@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    color: #ddd !important;
+    background-color: rgb(30, 30, 30) !important;
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    height: 40vh;
+    max-height: 40vh;
+    position: relative;
+    word-wrap: break-word;
+}
+
+header p {
+    max-height: 40vh;
+}
+
+.float-right {
+    float: right !important;
+}
+
+.description {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    margin-bottom: 0 !important;
+    /* height: 50px; */
+    vertical-align: center;
+    align-content: center;
+    line-height: 30px;
+    background-color: rgba(50, 50, 50, .8);
+}
+
+.repo-description {
+    font-size: 0.8em;
+}
+
+.success-highlight {
+    color: rgb(64, 207, 140);
+}
+
+header .description {
+    height: 50px;
+}
+
+footer {
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(25, 25, 25) !important;
+}
+
+section.skills {
+    min-height: 50px;
+    max-height: 50px;
+}
+
+.git-repo {
+    min-height: 36vh;
+}
+
+.bg-black-20 {
+    background-color: rgb(30, 30, 30) !important;
+}
+
+.bg-black-40 {
+    background-color: rgb(75, 75, 75) !important;
+}
+
+.bg-black-30 {
+    background-color: rgb(50, 50, 50) !important;
+}
+
+.git-logo {
+    background: url("../assets/img/GitHub_Logo.png") no-repeat left center;
+    background-size: 44px;
+}
+
+.bolder {
+    font-weight: bolder;
+}
+
+.badges {
+    background-color: #0f8a0f;
+}
