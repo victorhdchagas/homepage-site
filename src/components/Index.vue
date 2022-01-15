@@ -11,7 +11,7 @@
           @erased="update"
         ></vue-typer>
       </p>
-      <!-- <div class="description">Some amazing picture.</div> -->
+      <div class="description"></div>
     </header>
     <!--Social networks area-->
     <section class="badges d-flex justify-content-around skills">
@@ -58,14 +58,19 @@
             bolder
             position-relative
           "
-        @click="navigate(repo.html_url)"
-        role="button"
+          @click="navigate(repo.html_url)"
+          role="button"
         >
-          <span class="position-relative" v-bind:class="{'success-highlight':repo.id == selectedRepo.id}">{{ repo.name }}</span>
+          <span
+            class="position-relative"
+            v-bind:class="{ 'success-highlight': repo.id == selectedRepo.id }"
+            >{{ repo.name }}</span
+          >
           <img
             v-if="repo.language"
             :src="`https://badgen.net/badge/code/${repo.language}/444?label=&scale=0.8`"
-            class="position-absolute " style="right:5px;"
+            class="position-absolute"
+            style="right: 5px"
           />
         </div>
         <div
@@ -101,65 +106,71 @@
     <!--Some descritive texts-->
     <section class="w-75 m-auto pt-3">
       <p>Welcome to my homepage.</p>
-      <p>Here i want to show how i'm improving my skills in mine developer road, this is my simple portfolio with the  technologies which i'm improving this year.</p>
+      <p>
+        Here i want to show how i'm improving my skills in mine developer road,
+        this is my simple portfolio with the technologies which i'm improving
+        this year.
+      </p>
     </section>
     <!--Footer-->
-    <footer>
-        <span>Starting to develope my new 2022! We need strength to this new coming
-        year.</span>
+    <footer class="pagefooter">
+      <span
+        >Starting to develope my new 2022! We need strength to this new coming
+        year.</span
+      >
     </footer>
   </div>
 </template>
 
 <script>
-import { VueTyper } from "vue-typer";
-import git from "../services/git";
+import { VueTyper } from 'vue-typer'
+import git from '../services/git'
 
 export default {
-  name: "HelloWorld",
+  name: 'HelloWorld',
   data: () => {
     return {
       gitArray: [],
-      msg: "here is my secret.",
-      selectedRepo: {},
-    };
+      msg: 'here is my secret.',
+      selectedRepo: {}
+    }
   },
   computed: {
     last_repos: function () {
-      return this.gitArray
+      return this.gitArray.slice(0)
         .sort(function (a, b) {
-          return new Date(b.pushed_at) - new Date(a.pushed_at);
+          return new Date(b.pushed_at) - new Date(a.pushed_at)
         })
-        .slice(0, 3);
-    },
+        .slice(0, 3)
+    }
   },
   components: {
     // ES6; property shorthand + Vue should automatically dasherize the key for us
-    VueTyper,
+    VueTyper
   },
   methods: {
     update: async function () {
-      this.selectedRepo = git.selectRandomRepo(this.gitArray);
-      this.msg = git.formatGit(this.selectedRepo);
+      this.selectedRepo = git.selectRandomRepo(this.gitArray)
+      this.msg = git.formatGit(this.selectedRepo)
     },
     navigate: (url) => {
-      window.open(url, "_blank").focus();
-    },
+      window.open(url, '_blank').focus()
+    }
   },
   created: async function () {
-    this.gitArray = await git.getRepository();
-    this.update();
-  },
-};
+    this.gitArray = await git.getRepository()
+    this.update()
+  }
+}
 </script>
 
-<style >
+<style>
 @import "../css/index.css";
 vue-typer {
   white-space: pre;
 }
 
-.vue-typer .custom.char.typed {
-  color: #608b69;
+.vue-typer, .typed,  .custom.char {
+  color: #608b69 !important;
 }
 </style>

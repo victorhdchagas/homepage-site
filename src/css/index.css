@@ -5,7 +5,6 @@
 
 body {
     height: 100%;
-    color: #ddd !important;
     background-color: rgb(30, 30, 30) !important;
     margin: 0px;
     padding: 0px;
@@ -48,16 +47,20 @@ header p {
 }
 
 header .description {
-    height: 50px;
+    height: 100%;
 }
 
 footer {
-    /* position: fixed; */
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
     text-align: center;
     background-color: rgb(25, 25, 25) !important;
+}
+
+footer.pagefooter {
+    /* position: absolute; */
 }
 
 section.skills {
@@ -71,6 +74,7 @@ section.skills {
 
 .bg-black-20 {
     background-color: rgb(30, 30, 30) !important;
+    color: #ddd !important;
 }
 
 .bg-black-40 {
