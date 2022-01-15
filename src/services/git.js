@@ -1,3 +1,4 @@
+/* eslint-disable */
 import axios from 'axios'
 const fields = ['name', 'language', 'open_issues', 'updated_at', 'created_at', 'html_url', 'size', 'id', 'pushed_at', 'stargazers_count', 'homepage', 'description']
 export default {

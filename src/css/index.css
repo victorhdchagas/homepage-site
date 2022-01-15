@@ -60,7 +60,7 @@ footer {
 }
 
 footer.pagefooter {
-    /* position: absolute; */
+    position: absolute;
 }
 
 section.skills {
